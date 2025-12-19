@@ -1,420 +1,168 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Games</title>
-
-</head>
-<body>
-  
-<!-- Move search box and no-results message to the top -->
-<div style="display: flex; justify-content: center; margin-top: 30px;">
-  <input
-    id="game-search"
-    type="text"
-    placeholder="Search games..."
-    style="font-family: Ubuntu, sans-serif; font-size: 1.1em; border-radius: 10px; border: none; padding: 0.8em 1.5em; box-shadow: 0 2px 12px rgba(0,255,255,0.15); outline: none; margin-bottom: 20px; background: #181a1b; color: #00ffff; transition: box-shadow 0.2s;"
-    onfocus="this.style.boxShadow='0 4px 24px #00ffff55';"
-    onblur="this.style.boxShadow='0 2px 12px rgba(0,255,255,0.15)';"
-    autocomplete="off"
-  />
-</div>
-<div id="no-results-message" style="display:none; text-align:center; font-family: Ubuntu, sans-serif; color: #00ffff; font-size: 1.2em; margin-top: 30px; background: rgba(0,0,0,0.7); border-radius: 12px; padding: 18px 24px; box-shadow: 0 2px 16px #00ffff33;">
-  That doesn't exist you idiot. Better you suggested or DO YOUR DAMN WORK
-</div>
-
-<style>
-.button {
-    position: relative;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 10px;
-    transition: all .2s;
-    border: none;
-    font-family: Ubuntu;
-    font-weight: 425;
-    color: black;
-    background-color: white;
-    padding: 1em 2em;
-    margin: 5px;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: none; /* Removed the white shadow on hover */
-}
-
-.button:active {
-    transform: translateY(-1px);
-}
-
-.button::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.button::after {
-    background-color: #fff;
-}
-
-.button:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-
-
-
-  .sample {
-    border-radius: 12px;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-  
-  }
-  .sample:hover {
-    box-shadow:5px 10px 20px #ffffff;
-  }
-
-  .back-button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  min-width: 120px;
-}
-</style>
-<!-- Holy shit thats a ton of games -->
-  <button class="button" onclick="window.location.href='games/fruit.html'">Fruit Ninja</button>
-  <button class="button" onclick="window.location.href='games/1v.html'">1v1.lol</button>
-  <button class="button" onclick="window.location.href='games/smc.html'">Super Mario Construct </button>
-  <button class="button" onclick="window.location.href='games/metro.html'">Metroid Fusion</button>
-  <button class="button" onclick="window.location.href='games/celeste.html'">Celeste DEMAKE</button>
-  <button class="button" onclick="window.location.href='games/slope.html'">Slope</button>
-  <button class="button" onclick="window.location.href='games/mc.html'" class="btn">Minecraft 1.5.2</button>
-  <button class="button" onclick="window.location.href='games/mc2.html'">Minecraft (Classic)</button>
-  <button class="button" onclick="window.location.href='games/marioboom.html'">Mario Combat</button>
-  <button class="button" onclick="window.location.href='games/smb3.html'">Super Mario Bros 3</button>
-  <button class="button" onclick="window.location.href='games/mariokart.html'">Mario Kart 64</button>
-  <button class="button" onclick="window.location.href='games/roblox.html'">Roblox</button>
-  <button class="button" onclick="window.location.href='games/bald.html'">Baldis Basics</button>
-  <button class="button" onclick="window.location.href='games/vex7.html'">Vex 7</button>
-  <button class="button" onclick="window.location.href='games/volley.html'">Volley Random</button>
-  <button class="button" onclick="window.location.href='games/soccer.html'">Soccer Random</button>
-  <button class="button" onclick="window.location.href='games/cookie.html'">Cookie Clicker</button>
-  <button class="button" onclick="window.location.href='games/supersmash.html'">Super Smash Bros</button>
-  <button class="button" onclick="window.location.href='games/world.html'">Soccer Skills: World Cup</button>
-  <button class="button" onclick="window.location.href='games/drift.html'">Drift Hunters</button>
-  <button class="button" onclick="window.location.href='games/subway.html'">Subway Surfers</button>
-  <button class="button" onclick="window.location.href='games/roof2.html'">Rooftop Snipers 2</button>
-  <button class="button" onclick="window.location.href='games/bitlife.html'">Bitlife</button>
-  <button class="button" onclick="window.location.href='games/fancyp.html'">Fancy Pants Adventure</button>
-  <button class="button" onclick="window.location.href='games/linerider.html'">Line Rider</button>
-  <button class="button" onclick="window.location.href='games/taptap.html'">Tap Goal</button>
-  <button class="button" onclick="window.location.href='games/slope2.html'">Slope 2</button>
-  <button class="button" onclick="window.location.href='games/pokefirered.html'">Pokemon Fire Red</button>
-  <button class="button" onclick="window.location.href='games/pokegreen.html'">Pokemon Leaf Green</button>
-  <button class="button" onclick="window.location.href='games/pokebound.html'">Pokemon Unbound</button>
-  <button class="button" onclick="window.location.href='games/pokemerald.html'">Pokemon Emerald</button>
-  <button class="button" onclick="window.location.href='games/edgesurf.html'">Edge Surf</button>
-  <button class="button" onclick="window.location.href='games/riddle1.html'">Riddle School</button>
-  <button class="button" onclick="window.location.href='games/riddle2.html'">Riddle School 2</button>
-  <button class="button" onclick="window.location.href='games/ovo.html'">OvO</button>
-  <button class="button" onclick="window.location.href='games/ovo2.html'">OvO 2</button>
-  <button class="button" onclick="window.location.href='games/fifa2007.html'">Fifa 2007</button>
-  <button class="button" onclick="window.location.href='games/funnyshooter.html'">Funny Shooter </button>
-  <button class="button" onclick="window.location.href='games/retrobowl.html'">Retro Bowl </button>
-  <button class="button" onclick="window.location.href='games/annoyingfishgame.html'"> Tiny Fishing </button>
-  <button class="button" onclick="window.location.href='games/gachalife.html'">Gacha Life</button>
-  <button class="button" onclick="window.location.href='games/deathrun3d.html'">Death Run 4D</button>
-  <button class="button" onclick="window.location.href='games/deadrails.html'">Dead Rails</button>
-  <button class="button" onclick="window.location.href='games/geodash.html'">Geometry Dash</button>
-  <button class="button" onclick="window.location.href='games/crossyroad.html'">Crossy Roads</button>
-  <button class="button" onclick="window.location.href='games/motorx3m.html'">Motor X3M</button>
-  <button class="button" onclick="window.location.href='games/pokestadium.html'">Pokemon Stadium</button>
-  <button class="button" onclick="window.location.href='games/badtimesim.html'">Bad Time Sim</button>
-  <button class="button" onclick="window.location.href='games/csgoclicker.html'">CSGO Clicker</button>
-  <button class="button" onclick="window.location.href='games/fnf.html'">Friday Night Funkin</button>
-  <button class="button" onclick="window.location.href='games/snowbattle.html'">SnowBattle.io</button>
-  <button class="button" onclick="window.location.href='games/ocarinaoftime.html'">The Legend of Zelda: Ocarina of Time</button>
-  <button class="button" onclick="window.location.href='games/superhot.html'">Super Hot</button>
-  <button class="button" onclick="window.location.href='games/metalgear.html'">Metal Gear Solid</button>
-  <button class="button" onclick="window.location.href='games/jetpackjoyride.html'">Jetpack Joyride</button>
-  <button class="button" onclick="window.location.href='games/fnaf1.html'">FNAF 1</button>
-  <button class="button" onclick="window.location.href='games/fnaf2.html'">FNAF 2</button>
-  <button class="button" onclick="window.location.href='games/fnaf3.html'">FNAF 3</button>
-  <button class="button" onclick="window.location.href='games/fnaf4.html'">FNAF 4</button>
-  <button class="button" onclick="window.location.href='games/basketbrosio.html'">BasketBros.io</button>
-  <button class="button" onclick="window.location.href='games/timeshooter.html'">Time Shooter</button>   
-  <button class="button" onclick="window.location.href='games/granny.html'">Granny</button>
-  <button class="button" onclick="window.location.href='games/granny2.html'">Granny 2</button>
-  <button class="button" onclick="window.location.href='games/iceicebaby.html'">Ice Dodo</button>
-  <button class="button" onclick="window.location.href='games/notclashroyale.html'">Clash of Vikings</button>
-  <button class="button" onclick="window.location.href='games/agar.html'">Agar.io Lite</button>
-  <button class="button" onclick="window.location.href='games/awesometanks.html'">Awesome Tanks</button>
-  <button class="button" onclick="window.location.href='games/binding.html'">Binding Of Issac: Wrath of the Lamb</button>  
-  <button class="button" onclick="window.location.href='games/silksong.html'">Hollow Knight: Silksong DEMAKE</button>  
-<button class="button" onclick="window.location.href='games/basket.html'">Basket Random</button>  
-<button class="button" onclick="window.location.href='games/snowrider.html'">Snow Rider 3D</button>
-  <button class="button" onclick="window.location.href='games/stickslasher.html'">Stick Slasher</button>
-<button class="button" onclick="window.location.href='games/blockblast.html'">Block Blast</button>
-<button class="button" onclick="window.location.href='games/undertaleyellow.html'">Undertale Yellow</button>
-<button class="button" onclick="window.location.href='games/smallworldcup.html'">A Small World Cup</button>
-<button class="button" onclick="window.location.href='games/gunmayhem.html'">Gun Mayhem</button>
-<button class="button" onclick="window.location.href='games/kourio.html'">Kour IO</button>
-<button class="button" onclick="window.location.href='games/99nights.html'">99 Nights In the Forest</button>
-<button class="button" onclick="window.location.href='games/boxingrandom.html'">Boxing Random</button>
-  <div style="height: 40px;"></div>
-  
-  <div style="display: flex; justify-content: center;">
-    <button class="button back-button" onclick="window.location.href='start.html'">Back</button>
-  </div>
-
-
-
-
-
- <style>
-   
-  img {
-    display: block;
-    margin: auto;
-    width: 35%; /* change this value to adjust the size of the image */
-  }
-</style>
-
-  <style>
-    body {
-    color: rgb(0, 255, 255);
-      background-color:black;
-      font-family:Ubuntu;
-      background-size: cover;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    }
-  </style>
-
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  // Get the select element
-  var select = document.getElementById("background-select");
-
-  // Set initial background image based on stored preference or default
-  var selectedBackground = localStorage.getItem("selectedBackground");
-  
-  if (selectedBackground) {
-    document.body.style.backgroundImage = "url(" + selectedBackground + ")";
-    select.value = selectedBackground;
-  }
-
-   // Listen for changes in the select element
-   select.addEventListener("change", function() {
-     var newBackground = this.value;
-     document.body.style.backgroundImage = "url(" + newBackground + ")";
-     localStorage.setItem("selectedBackground", newBackground);
-   });
-});
-
-  </script>
-
-
-
-<body>
-  <div class="dust-particle"></div></body>
-<style>
-  #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-  }
-</style>
-</head>
-<body>
-<div id="particles-js"></div>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS('particles-js', {
-      "particles": {
-          "number": {
-              "value": 160,
-              "density": {
-                  "enable": true,
-                  "value_area": 800
-              }
-          },
-          "color": {
-              "value": "#ffffff"
-          },
-          "shape": {
-              "type": "circle",
-              "stroke": {
-                  "width": 0,
-                  "color": "#000000"
-              },
-              "polygon": {
-                  "nb_sides": 5
-              },
-              "image": {
-                  "src": "img/github.svg",
-                  "width": 100,
-                  "height": 100
-              }
-          },
-          "opacity": {
-              "value": 1,
-              "random": true,
-              "anim": {
-                  "enable": true,
-                  "speed": 1,
-                  "opacity_min": 0,
-                  "sync": false
-              }
-          },
-          "size": {
-              "value": 3,
-              "random": true,
-              "anim": {
-                  "enable": false,
-                  "speed": 4,
-                  "size_min": 0.3,
-                  "sync": false
-              }
-          },
-          "line_linked": {
-              "enable": false,
-              "distance": 150,
-              "color": "#ffffff",
-              "opacity": 0.4,
-              "width": 1
-          },
-          "move": {
-              "enable": true,
-              "speed": 1,
-              "direction": "none",
-              "random": true,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                  "enable": false,
-                  "rotateX": 600,
-                  "rotateY": 600
-              }
-          }
-      },
-      "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-              "onhover": {
-                  "enable": true,
-                  "mode": "bubble"
-              },
-              "onclick": {
-                  "enable": true,
-                  "mode": "repulse"
-              },
-              "resize": true
-          },
-          "modes": {
-              "grab": {
-                  "distance": 400,
-                  "line_linked": {
-                      "opacity": 1
-                  }
-              },
-              "bubble": {
-                  "distance": 250,
-                  "size": 0,
-                  "duration": 2,
-                  "opacity": 0,
-                  "speed": 3
-              },
-              "repulse": {
-                  "distance": 400,
-                  "duration": 0.4
-              },
-              "push": {
-                  "particles_nb": 4
-              },
-              "remove": {
-                  "particles_nb": 2
-              }
-          }
-      },
-      "retina_detect": true
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
-    favicon.rel = "icon";
-    document.head.appendChild(favicon);
-
-    const storedPreset = localStorage.getItem("selectedTabPreset") || "default";
-
-    switch (storedPreset) {
-      case "google":
-        document.title = "Google";
-        favicon.href = "https://www.google.com/favicon.ico";
-        break;
-      case "classroom":
-        document.title = "Google Classroom";
-        favicon.href = "https://www.gstatic.com/classroom/logo_square_rounded.svg";
-        break;
-      case "vocabulary":
-        document.title = "Vocabulary.com";
-        favicon.href = "https://www.vocabulary.com/favicon.ico";
-        break;
-      default:
-        document.title = "Games";
-        favicon.href = "favicon.ico";
-    }
-  });
-</script>
-</body>
-
-<script>
-// Fancy search filter for game buttons
-document.addEventListener("DOMContentLoaded", function() {
-  const searchInput = document.getElementById('game-search');
-  const noResults = document.getElementById('no-results-message');
-  // Select all game buttons (exclude the Back button)
-  const gameButtons = Array.from(document.querySelectorAll('.button:not(.back-button)'));
-
-  function filterGames() {
-    const query = searchInput.value.trim().toLowerCase();
-    let matches = 0;
-    gameButtons.forEach(btn => {
-      const text = btn.textContent.toLowerCase();
-      if (text.includes(query)) {
-        btn.style.display = '';
-        matches++;
+<html lang="en">
+  <head>
+    <title>Games</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <button type="button" class="nav-btn" onclick="location.href='/start.html'">Home</button>
+      <button type="button" class="nav-btn" aria-current="page" onclick="location.href='/select.html'">Games</button>
+      <button type="button" class="nav-btn" onclick="location.href='/tools.html'">Tools</button>
+      <button type="button" class="nav-btn" onclick="location.href='/settings.html'">Settings</button>
+      <button type="button" class="nav-btn" onclick="location.href='/disclaimer.html'">Disclaimer</button>
+    </nav>
+    <div id="games">
+      <main>
+        <h1>Games:</h1>
+        <div class="search-bar-container">
+          <input
+            id="game-search"
+            class="search-bar"
+            type="text"
+            placeholder="Look for a game you want..."
+            autocomplete="off"
+            oninput="filterGames()"
+          />
+        </div>
+        <div id="no-results-message" style="display:none; text-align:center; font-family: Ubuntu, sans-serif; color: #099eda; font-size: 1.2em; margin-top: 30px; background: rgba(0,0,0,0.7); border-radius: 12px; padding: 18px 24px; box-shadow: 0 2px 16px #00ffff33;">
+          No results found. <a href="https://forms.gle/d8hBcyNGbLXk7cEk9" style="color:#00ffff; text-decoration:underline;">Game request form</a> is right here brodie.
+        </div>
+        <button class="button" id="request" onclick="window.open('https://forms.gle/d8hBcyNGbLXk7cEk9', '_blank')">Game Request Form</button>
+        <!-- Hate the little amount of games? Put urself into my shoes for a moment.  Imagine having to add all of these.-->
+        <div id="game-buttons">
+          <button class="button" data-title="Fruit Ninja" onclick="window.location.href='pages/game-pages/fruitninja.html'">Fruit Ninja</button>
+          <button class="button" data-title="1v1.lol" onclick="window.location.href='pages/game-pages/1v1lol.html'">1v1.lol</button>
+          <button class="button" data-title="Taisei Project" onclick="window.location.href='pages/game-pages/taiseiproject.html'">Taisei Project</button>
+          <button class="button" data-title="Metroid Fusion" onclick="window.location.href='pages/game-pages/metroidfusion.html'">Metroid Fusion</button>
+          <button class="button" data-title="Celeste" onclick="window.location.href='pages/game-pages/celeste.html'">Celeste</button>
+          <button class="button" data-title="Slope" onclick="window.location.href='pages/game-pages/slope.html'">Slope</button>
+          <button class="button" data-title="Slope Plus" onclick="window.location.href='pages/game-pages/slopeplus.html'">Slope Plus</button>
+          <button class="button" data-title="Slope 2 Player" onclick="window.location.href='pages/game-pages/slope2player.html'">Slope 2 Player</button>
+          <button class="button" data-title="Eaglercraft 1.5.2" onclick="window.location.href='pages/game-pages/eaglercraft152.html'">Eaglercraft 1.5.2</button>
+          <button class="button" data-title="Eaglercraft 1.12.2" onclick="window.location.href='pages/game-pages/eaglercraft122.html'">Eaglercraft 1.12.2</button>
+          <button class="button" data-title="Mario Combat" onclick="window.location.href='pages/game-pages/mariocombat.html'">Mario Combat</button>
+          <button class="button" data-title="Super Mario Bros" onclick="window.location.href='pages/game-pages/supermariobros.html'">Super Mario Bros</button>
+          <button class="button" data-title="Mario Kart 64" onclick="window.location.href='pages/game-pages/mariokart64.html'">Mario Kart 64</button>
+          <button class="button" data-title="Baldi's Basics" onclick="window.location.href='pages/game-pages/baldibasics.html'">Baldi's Basics</button>
+          <button class="button" data-title="Vex" onclick="window.location.href='pages/game-pages/vex.html'">Vex</button>
+          <button class="button" data-title="Vex 2" onclick="window.location.href='pages/game-pages/vex2.html'">Vex 2</button>
+          <button class="button" data-title="Vex 3" onclick="window.location.href='pages/game-pages/vex3.html'">Vex 3</button>
+          <button class="button" data-title="Volley Random" onclick="window.location.href='pages/game-pages/volleyrandom.html'">Volley Random</button>
+          <button class="button" data-title="Soccer Random" onclick="window.location.href='pages/game-pages/soccerrandom.html'">Soccer Random</button>
+          <button class="button" data-title="Basket Random" onclick="window.location.href='pages/game-pages/basketrandom.html'">Basket Random</button>
+          <button class="button" data-title="Boxing Random" onclick="window.location.href='pages/game-pages/boxingrandom.html'">Boxing Random</button>
+          <button class="button" data-title="Nuts" onclick="window.location.href='pages/game-pages/nutsnbolts.html'">Nuts and Bolts Screwing Puzzle</button>
+          <button class="button" data-title="Cookie Clicker" onclick="window.location.href='pages/game-pages/cookieclicker.html'">Cookie Clicker</button>
+          <button class="button" data-title="Super Smash Bros" onclick="window.location.href='pages/game-pages/supersmashbros.html'">Super Smash Bros</button>
+          <button class="button" data-title="Soccer Skills" onclick="window.location.href='pages/game-pages/soccerskills.html'">Soccer Skills World Cup</button>
+          <button class="button" data-title="N-Gon" onclick="window.location.href='pages/game-pages/ngon.html'">N-Gon</button>
+          <button class="button" data-title="Drift Hunters" onclick="window.location.href='pages/game-pages/drifthunters.html'">Drift Hunters</button>
+          <button class="button" data-title="Subway Surfers" onclick="window.location.href='pages/game-pages/subwaysurferswinterholiday.html'">Subway Surfers: Winter Holiday</button>
+          <button class="button" data-title="Subway Surfers" onclick="window.location.href='pages/game-pages/subwaysurfersmiami.html'">Subway Surfers: Miami</button>
+          <button class="button" data-title="Rooftop Snipers" onclick="window.location.href='pages/game-pages/rooftopsnipers.html'">Rooftop Snipers</button>
+          <button class="button" data-title="Rooftop Snipers" onclick="window.location.href='pages/game-pages/rooftopsnipers2.html'">Rooftop Snipers 2</button>
+          <button class="button" data-title="Bitlife" onclick="window.location.href='pages/game-pages/bitlife.html'">Bitlife</button>
+          <button class="button" data-title="Fancy Pants Adventure" onclick="window.location.href='pages/game-pages/fancypantsadventure.html'">Fancy Pants Adventure</button>
+          <button class="button" data-title="Line Rider" onclick="window.location.href='pages/game-pages/linerider.html'">Line Rider</button>
+          <button class="button" data-title="Deltarune" onclick="window.location.href='pages/game-pages/deltarune.html'">Deltarune</button>
+          <button class="button" data-title="Unfair Undyne" onclick="window.location.href='pages/game-pages/unfairundyne.html'">Unfair Undyne</button>
+          <button class="button" data-title="Ultrakill" onclick="window.location.href='pages/game-pages/ultrakill.html'">Ultrakill</button>
+          <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonfirered.html'">Pokemon Fire Red</button>
+          <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonleafgreen.html'">Pokemon Leaf Green</button>
+          <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonunbound.html'">Pokemon Unbound</button>
+          <button class="button" data-title="Pokemon Stadium" onclick="window.location.href='pages/game-pages/pokemonstadium.html'"">Pokemon Stadium</button>
+          <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonemerald.html'">Pokemon Emerald</button>
+          <button class="button" data-title="Sonic The Hedgehog" onclick="window.location.href='pages/game-pages/sonicthehedgehog.html'">Sonic the Hedgehog</button>
+          <button class="button" data-title="Riddle School" onclick="window.location.href='pages/game-pages/riddleschool.html'">Riddle School</button>
+          <button class="button" data-title="Red Ball" onclick="window.location.href='pages/game-pages/redball.html'">Red Ball 4</button>
+          <button class="button" data-title="OvO" onclick="window.location.href='pages/game-pages/ovo.html'">OvO</button>
+          <button class="button" data-title="OvO 2" onclick="window.location.href='pages/game-pages/ovo2.html'">OvO 2</button>
+          <button class="button" data-title="Fifa 11" onclick="window.location.href='pages/game-pages/fifa11.html'">FIFA 11</button>
+          <button class="button" data-title="Funny Shooter 2" onclick="window.location.href='pages/game-pages/funnyshooter2.html'">Funny Shooter 2</button>
+          <button class="button" data-title="Retro Bowl" onclick="window.location.href='pages/game-pages/retrobowl.html'">Retro Bowl</button>
+          <button class="button" data-title="Retro Bowl" onclick="window.location.href='pages/game-pages/retrobowlcollege.html'">Retro Bowl College</button>
+          <button class="button" data-title="Tiny Fishing" onclick="window.location.href='pages/game-pages/tinyfishing.html'"">Tiny Fishing</button>
+          <button class="button" data-title="Doom" onclick="window.location.href='pages/game-pages/doom.html'"">Doom</button>
+          <button class="button" data-title="Among Us" onclick="window.location.href='pages/game-pages/amongus.html'"">Among Us</button>
+          <button class="button" data-title="Geometry Dash" onclick="window.location.href='pages/game-pages/geometrydash.html'"">Geometry Dash</button>
+          <button class="button" data-title="Crossy Roads" onclick="window.location.href='pages/game-pages/crossyroads.html'"">Crossy Roads</button>
+          <button class="button" data-title="MotoX3M" onclick="window.location.href='pages/game-pages/motox3m.html'"">MotoX3M</button>
+          <button class="button" data-title="Omori" onclick="window.location.href='pages/game-pages/omori.html'"">Omori</button>
+          <button class="button" data-title="Bad Time Simulator" onclick="window.location.href='pages/game-pages/badtimesimulator.html'"">Bad Time Simulator</button>
+          <button class="button" data-title="CSGO Clicker" onclick="window.location.href='pages/game-pages/csgoclicker.html'"">CSGO Clicker</button>
+          <button class="button" data-title="Yume Nikki" onclick="window.location.href='pages/game-pages/yumenikki.html'"">Yume Nikki</button>
+          <button class="button" data-title="FNF" onclick="window.location.href='pages/game-pages/fnf.html'"">Friday Night Funkin</button>
+          <button class="button" data-title="Snowbattleio" onclick="window.location.href='pages/game-pages/snowbattle.html'"">Snow Battle IO</button>
+          <button class="button" data-title="The Legend of Zelda: Ocarina of Time" onclick="window.location.href='pages/game-pages/ocarina.html'"">The Legend of Zelda: Ocarina of Time</button>
+          <button class="button" data-title="Karlson" onclick="window.location.href='pages/game-pages/karl.html'"">Karlson</button>
+          <button class="button" data-title="Metal Gear Solid" onclick="window.location.href='pages/game-pages/metal.html'"">Metal Gear Solid</button>
+          <button class="button" data-title="Jetpack Joyride" onclick="window.location.href='pages/game-pages/jet.html'"">Jetpack Joyride</button>
+          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf.html'"">Five Nights at Freddy's</button>
+          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf2.html'"">Five Nights at Freddy's 2</button>
+          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf3.html'"">Five Nights at Freddy's 3</button>
+          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf4.html'"">Five Nights at Freddy's 4</button>
+          <button class="button" data-title="Hollow Knight" onclick="window.location.href='pages/game-pages/hollow.html'"">Hollow Knight</button>
+          <button class="button" data-title="Granny" onclick="window.location.href='pages/game-pages/granny.html'"">Granny</button>
+          <button class="button" data-title="Granny 2" onclick="window.location.href='pages/game-pages/granny2.html'"">Granny 2</button>
+          <button class="button" data-title="Ice Dodo" onclick="window.location.href='pages/game-pages/icedodo.html'"">Ice Dodo</button>
+          <button class="button" data-title="Clash of Vikings" onclick="window.location.href='pages/game-pages/clash.html'"">Clash of Vikings</button>
+          <button class="button" data-title="Agar.io" onclick="window.location.href='pages/game-pages/agario.html'"">Agar IO</button>
+          <button class="button" data-title="Awesome Tanks" onclick="window.location.href='pages/game-pages/awesome.html'"">Awesome Tanks</button>
+          <button class="button" data-title="Binding" onclick="window.location.href='pages/game-pages/binding.html'"">Binding Of Issac: Wrath of the Lamb</button>
+          <button class="button" data-title="Hollow Knight" onclick="window.location.href='pages/game-pages/silksong.html'"">Hollow Knight: Silksong (DEMAKE)</button>
+          <button class="button" data-title="Basketball Stars" onclick="window.location.href='pages/game-pages/basketstars.html'"">Basketball Stars</button>
+          <button class="button" data-title="R.E.P.O" onclick="window.location.href='pages/game-pages/repo.html'"">R.E.P.O</button>
+          <button class="button" data-title="Football Bros" onclick="window.location.href='pages/game-pages/footbros.html'"">Football Bros</button>
+          <button class="button" data-title="Baseball Bros" onclick="window.location.href='pages/game-pages/basebros.html'"">Baseball Bros</button>
+          <button class="button" data-title="Basket Bros" onclick="window.location.href='pages/game-pages/basketbros.html'"">Basket Bros</button>
+          <button class="button" data-title="Snow Rider 3D" onclick="window.location.href='pages/game-pages/snowrider.html'"">Snow Rider 3D</button>
+          <button class="button" data-title="Stick Slasher" onclick="window.location.href='pages/game-pages/stickslasher.html'"">Stick Slasher</button>
+          <button class="button" data-title="Block Blast" onclick="window.location.href='pages/game-pages/blockblast.html'"">Block Blast</button>
+          
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+    // Tab cloaker
+    (function() {
+      const value = localStorage.getItem('tabCloaker') || 'default';
+      const favicon = document.querySelector("link[rel~='icon']") || (() => {
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+        return link;
+      })();
+      if (value === 'google') {
+        document.title = 'Google';
+        favicon.href = 'https://www.google.com/favicon.ico';
+      } else if (value === 'vocab') {
+        document.title = 'My Learning | Vocabulary.com';
+        favicon.href = 'https://www.vocabulary.com/favicon.ico';
       } else {
-        btn.style.display = 'none';
+        document.title = 'Games';
+        favicon.href = '/favicon.ico';
       }
-    });
-    noResults.style.display = matches === 0 && query.length > 0 ? 'block' : 'none';
-  }
+    })();
 
-  searchInput.addEventListener('input', filterGames);
-});
-</script>
-</html>
+    // Game button filter
+    function filterGames() {
+      const input = document.getElementById('game-search').value.toLowerCase();
+      const buttons = document.querySelectorAll('#game-buttons .button');
+      let anyVisible = false;
+      buttons.forEach(btn => {
+        const title = btn.getAttribute('data-title').toLowerCase();
+        if (title.includes(input)) {
+          btn.style.display = '';
+          anyVisible = true;
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+      document.getElementById('no-results-message').style.display = anyVisible ? 'none' : 'block';
+    }
+  </script>
 </html>

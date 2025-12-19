@@ -1,313 +1,108 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Games</title>
-<!-- Trivia! This page used to be for themes and I wanted to rename this to themes.html at one point!-->
-</head>
-<body>
+<html lang="en">
+  <head>
+    <title>Settings</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <style> 
+      #games { display: flex; justify-content: center; }
+      #games main { text-align: center; width: 100%; max-width: 900px; margin: 0 auto; }
+      #games main > div { display: inline-block; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button type="button" class="nav-btn" onclick="location.href='/start.html'">Home</button>
+      <button type="button" class="nav-btn" onclick="location.href='/select.html'">Games</button>
+      <button type="button" class="nav-btn" onclick="location.href='/tools.html'">Tools</button>
+      <button type="button" class="nav-btn" aria-current="page" onclick="location.href='/settings.html'">Settings</button>
+      <button type="button" class="nav-btn" onclick="location.href='/disclaimer.html'">Disclaimer</button>
+    </nav>
+    <div id="games">
+      <main>
+        <h1>Settings Options:</h1>
+        <div style="margin-top:2rem;">
+          <label for="tabCloaker" style="font-size:1.2em;font-weight:bold;display:block;margin-bottom:0.5em;">Tab Cloaker</label>
+          <select id="tabCloaker" style="font-size:1em;padding:0.5em;">
+            <option value="default">Default</option>
+            <option value="google">Google</option>
+            <option value="vocab">Vocabulary.com</option>
+          </select>
+          <div style="height:1.5em;"></div>
+          <label for="idk" style="font-size:1.2em;font-weight:bold;display:block;margin-bottom:0.5em;">Click to launch in about:blank if you aren't already:</label>
+          <button class="button" id="bg-launch-btn" onclick="openGame()" >Tab cloaker</button>
+          <script>
+          function openGame() {
+          var win = window.open();
+    var url = "start.html";
+    
+    win.document.title = 'Wikipedia';
 
+    var link = win.document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/x-icon';
+    link.href = 'https://en.wikipedia.org/favicon.ico';
+    
+    win.document.head.appendChild(link);
+    
+    var iframe = win.document.createElement('iframe');
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.src = url;
+    win.document.body.appendChild(iframe);
 
-  <style>
-    select {
-        background-color: cornflowerblue;
-        border-radius: 15px;
-        font-family: sans;
-        top:0;
-        right:50%;
-        width:170px;
-    }
-</style>
-   
-<style>
-    option {
-        background-color: cornflowerblue;
-        border-radius: 15px;
-        font-family: sans;
-    }
-</style>
-
-
-  
-
-<style>
-  .text:hover {
-    box-shadow:5px 10px 20px #ffffff;
-  }
-  .label {
-    font-family:Poppins;
-  }
-  .button {
-    position: relative;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 10px;
-    transition: all .2s;
-    border: none;
-    font-family: Poppins;
-    font-weight: 425;
-    color: black;
-    background-color: white;
-    padding: 1em 2em;
-    margin: 5px;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: none; /* Removed the white shadow on hover */
-}
-
-.button:active {
-    transform: translateY(-1px);
-}
-
-.button::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.button::after {
-    background-color: #fff;
-}
-
-.button:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-.button2 {
-    position: relative;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 10px;
-    transition: all .2s;
-    border: none;
-    font-family: Ubuntu;
-    font-weight: 425;
-    color: black;
-    background-color: white;
-    padding: 1em 2em;
-    margin: 5px;
-}
-
-.button2:hover {
-    transform: translateY(-3px);
-    box-shadow: none; /* Removed the white shadow on hover */
-}
-
-.button2:active {
-    transform: translateY(-1px);
-}
-
-.button2::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.button2::after {
-    background-color: #fff;
-}
-
-.button2:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-
-  .text {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius:10px;
-    font-family:sans;
-    text-decoration:none;
-  }
-  .sample {
-    border-radius: 12px;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-  
-  }
-  .sample:hover {
-    box-shadow:5px 10px 20px #ffffff;
-  }
-</style>
-<style>
-  /* Style for the select dropdown */
-#background-select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9; /* Fallback color */
-    font-size: 16px;
-    width: 200px;
-    font-family: Poppins;
-    background-repeat: no-repeat;
-}
-
-</style>
-</head>
-<body>
-  <label class="label" for="background-select">Select Wallpaper:</label>
-  <select id="background-select">
-    <option value="default.jpg">Default</option>
-    <option value="media/wallpapers/milky-way.jpg">Milky Way</option>
-    <option value="media/wallpapers/neon-city-skyline.jpg">Neon City Skyline</option>
-    <option value="media/wallpapers/sky-islands.jpg">Sky Islands</option>
-    <option value="media/wallpapers/village.jpg">Islands of Oia, Santorini Greece</option>
-
-    <!-- Add more options as needed -->
-  </select>
-
-  <style>
-  #tab-select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    font-size: 16px;
-    width: 200px;
-    font-family: Poppins;
-    margin-top: 20px;
-  }
-</style>
-  <label class="label" for="tab-select">Tab Cloak:</label>
-  <select id="tab-select">
-    <option value="default">Default</option>
-    <option value="google">Google</option>
-    <option value="classroom">Google Classroom</option>
-    <option value="vocabulary">Vocabulary.com</option>
-  </select>
-<button class="button" onclick="openGame()" >Tab cloaker</button>
-<script>
-  function openGame() {
-    var win = window.open ()
-    var url = "index.html"
-    var iframe = win.document.createElement('iframe')
-    iframe.style.width = "100%"
-    iframe.style.height = "100%"
-    iframe.style.border = "none"
-    iframe.src = url
-    win.document.body.appendChild(iframe)
-  }
+          }
   </script>
-
-
-</body>
-</html>
-
-  <!-- Include the JavaScript code -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  // Get the select element
-  var select = document.getElementById("background-select");
-
-  // Set initial background image based on stored preference or default
-  var selectedBackground = localStorage.getItem("selectedBackground");
-  
-  if (selectedBackground) {
-    document.body.style.backgroundImage = "url(" + selectedBackground + ")";
-    select.value = selectedBackground;
-  }
-
-   // Listen for changes in the select element
-   select.addEventListener("change", function() {
-     var newBackground = this.value;
-     document.body.style.backgroundImage = "url(" + newBackground + ")";
-     localStorage.setItem("selectedBackground", newBackground);
-   });
-});
-
-  document.addEventListener("DOMContentLoaded", function() {
-      const tabSelect = document.getElementById("tab-select");
-      const favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
-      favicon.rel = "icon";
-      document.head.appendChild(favicon);
-
-      // Set initial tab preset based on stored preference or default
-    const storedPreset = localStorage.getItem("selectedTabPreset") || "default";
-    tabSelect.value = storedPreset;
-    updateTabPreset(storedPreset);
-
-    tabSelect.addEventListener("change", function() {
-      const preset = this.value;
-      updateTabPreset(preset);
-      localStorage.setItem("selectedTabPreset", preset); // Store the selected preset
-    });
-
-    function updateTabPreset(preset) {
-      switch (preset) {
-        case "google":
-          document.title = "Google";
-          favicon.href = "https://www.google.com/favicon.ico";
-          break;
-        case "classroom":
-          document.title = "Google Classroom";
-          favicon.href = "https://www.gstatic.com/classroom/logo_square_rounded.svg";
-          break;
-        case "vocabulary":
-          document.title = "My learning | Vocabulary.com";
-          favicon.href = "https://www.vocabulary.com/favicon.ico";
-          break;
-        default:
-          document.title = "ZenithHub";
-          favicon.href = "favicon.ico";
-      }
-    }
-    });
-  </script>
-
- <style>
-   
-  img {
-    display: block;
-    margin: auto;
-    width: 35%; /* change this value to adjust the size of the image */
-  }
-</style>
-
-  <style>
-    body {
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin: 0;
-        padding: 0;
-        background-color: black;
-        font-family: Ubuntu;
-        color: white;
-    }
-  </style>
-
-
-
-
-<img src="favicon.ico" alt="Image">
-</body>
-<button class="button" onclick="window.location.href='start.html'">Back</button>
+        </div>
+          <div style="height:1.5em;"></div>
+        <script>
+          // Tab cloaker logic for settings page
+          const tabCloaker = document.getElementById('tabCloaker');
+          const favicon = document.querySelector("link[rel~='icon']") || (() => {
+            const link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+            return link;
+          })();
+          function setTabCloak(value) {
+            if (value === 'google') {
+              document.title = 'Google';
+              favicon.href = 'https://www.google.com/favicon.ico';
+            } else if (value === 'vocab') {
+              document.title = 'My Learning | Vocabulary.com';
+              favicon.href = 'https://www.vocabulary.com/favicon.ico';
+            } else {
+              favicon.href = '/favicon.ico';
+            }
+            // Save choice for other pages
+            localStorage.setItem('tabCloaker', value);
+          }
+          tabCloaker.addEventListener('change', e => setTabCloak(e.target.value));
+          // On load, set dropdown and tab
+          const saved = localStorage.getItem('tabCloaker') || 'default';
+          tabCloaker.value = saved;
+          setTabCloak(saved);
+          // Background open helper: must be invoked by a user gesture (click)
+          function openAboutBlankInBackground() {
+            const newWin = window.open('about:blank', '_blank');
+            if (!newWin) {
+              console.warn('Popup blocked: cannot open about:blank in background.');
+              return;
+            }
+            try {
+              // Best-effort: try to keep focus on this page
+              newWin.blur();
+              window.focus();
+            } catch (e) {
+              // Ignore browsers that block blur/focus
+            }
+          }
+          const bgBtn = document.getElementById('bg-launch-btn');
+          if (bgBtn) bgBtn.addEventListener('click', openAboutBlankInBackground);
+        </script>
+      </main>
+    </div>
+  </body>
 </html>

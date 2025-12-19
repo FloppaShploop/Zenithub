@@ -1,11 +1,22 @@
 <script>
-    var win = window.open ()
-    var url = "index.html"
-    var iframe = win.document.createElement('iframe')
-    iframe.style.width = "100%"
-    iframe.style.height = "100%"
-    iframe.style.border = "none"
-    iframe.src = url
-    win.document.body.appendChild(iframe)
+    var win = window.open();
+    var url = "start.html";
+    
+    win.document.title = 'Google Scholar';
+
+    var link = win.document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/x-icon';
+    link.href = 'https://scholar.google.com/favicon.ico';
+    
+    win.document.head.appendChild(link);
+    
+    var iframe = win.document.createElement('iframe');
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.src = url;
+    win.document.body.appendChild(iframe);
+
 </script>
-Give us a sec, tryna get u there b4 we implode. 
+<h1>Redirecting...</h1>
