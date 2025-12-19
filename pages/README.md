@@ -1,5 +1,5 @@
 # Games I replaced when adding the games from Zenithub
-I'm warning you, this list is an interesting one.
+I'm warning you, this list is an interesting one. When working on the DotGUI Rebrand update, I tried sticking to having games be hosted on-site. I couldn't have some games this way, and below are the reasons why.
 - Super Mario Construct --> Taisei Project, I had my eyes closed when picking the replacement tbh
 - Roblox --> Nuts and Bolts Screwing Puzzle. It sounded like a game someone requested, and Roblox isn't really possible anymore.
 - Subway Surfers (Normal) --> A bunch of versions like Winter holiday, Miami, etc.
