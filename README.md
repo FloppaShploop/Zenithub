@@ -19,7 +19,9 @@ Go to one of our OFFICIAL Links listed in the Discord Server.
 
 ### For Hosts: 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDotLYHiyou%2FDotGUI)
-- It IS static.
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/DotLYHiyou/DotGUI)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DotLYHiyou/DotGUI)
+- It is static, so you can deploy it very easily.
 ### Data URL method
 ```
 data:text/html;charset=utf-8,<html><head><title>BERKSHIRE HATHAWAY INC.</title><style>body,html,iframe{margin:0;padding:0;height:100%;width:100%;overflow:hidden;border:none;}</style></head><body><iframe src="https://dot-gui.vercel.app/"></iframe></body></html>
