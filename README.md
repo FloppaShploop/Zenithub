@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="favicon.ico" alt="DotGUI Logo"/>
 </p>
